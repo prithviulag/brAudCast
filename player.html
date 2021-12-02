@@ -3,21 +3,14 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description" content="brAudCast"/>
-        <title>brAudCast</title>
+        <title>Player | brAudCast</title>
         <link rel="stylesheet" type="text/css" href="styles/main.css"/>
         <link rel="icon" type="image/png" href="images/brAudCast.png"/>
     </head>
-    <body onload="loadLinks()">
-        <script src="scripts/main.js"></script>
-
-        <div id="select">
-
-        </div>
-
-        <div id="audioWrapper" style="display:none;">
-            <!--brAudCast goes here-->
-        </div>
-        <a id="back" onmousedown="reLoad()" style="display: none;">return</a>
+    <body>
+        <audio controls>
+            <source src="tracks/01.mp3" type="audio/mp3">
         </audio>
+        <script src="scripts/main.js"></script>
     </body>
 </html>

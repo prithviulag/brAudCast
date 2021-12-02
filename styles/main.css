@@ -1,3 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+@keyframes flow {
+    from {
+        height: 1vh;
+    }
+
+    50% {
+        height: 1.5vh;
+    }
+
+    to {
+        height: 1vh
+    }
+}
+
+@keyframes flow2 {
+    from {
+        height: 1vh;
+    }
+
+    50% {
+        height: 0.5vh;
+    }
+
+    to {
+        height: 1vh
+    }
+}
+
+@keyframes lightup {
+    from {
+        color: white;
+    }
+
+    to {
+        color: #4d403b;
+        font-size: 1.4em;
+    }
+}
+
 p, body {
     margin: 0;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    background-color: #040322;
+}
+
+.trackLink {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.trackLink::before {
+    content: "";
+    display: block;
+    height: 1vh;
+    animation-duration: 2s;
+    animation-name: flow;
+    animation-iteration-count: infinite;
+}
+
+.trackLink::after {
+    content: "";
+    display: block;
+    height: 1vh;
+    animation-duration: 2s;
+    animation-name: flow2;
+    animation-iteration-count: infinite;
+}
+
+.trackLink:hover, #back:hover {
+    cursor: pointer;
+    animation-duration: 0.2s;
+    animation-name: lightup;
+    animation-fill-mode: forwards;
+}
+
+#select {
+    text-align: center;
+    margin: 10% 25%;
+}
+
+#audioWrapper {
+    margin: 10% 25%;
+}
+
+#brAudCast {
+    width: 100%;
+}
+
+#back {
+    color: white;
+    margin: 10% 25%;
+    text-align: center;
+}
+
+#back:hover { 
+    cursor: pointer;
 }
