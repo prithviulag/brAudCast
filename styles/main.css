@@ -39,6 +39,28 @@
     }
 }
 
+@keyframes colorchange {
+    from {
+        background-color: #220318;
+    }
+
+    25% {
+        background-color: #040322;
+    }
+
+    50% {
+        background-color: #032211;
+    }
+
+    75% {
+        background-color: #030622;
+    }
+
+    to {
+        background-color: #220318;
+    }
+}
+
 #jsalert {
     color: white;
     margin: 10% 25%;
@@ -51,6 +73,9 @@ p, body {
 body {
     font-family: "Work Sans", sans-serif;
     background-color: #040322;
+    animation-duration: 60s;
+    animation-name: colorchange;
+    animation-iteration-count: infinite;
 }
 
 .trackLink {
