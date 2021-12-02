@@ -8,16 +8,21 @@
         <link rel="icon" type="image/png" href="images/brAudCast.png"/>
     </head>
     <body onload="loadLinks()">
-        <script src="scripts/main.js"></script>
+        <h1 id="jsalert">JavaScript is required for brAudCast to function.
+            <br>
+            <span style="font-size:0.5em;">Please turn JavaScript on in your browser settings.</span>
+        </h1>
+        <div id="content-wrapper" style="display:none;">
+            <script src="scripts/main.js"></script>
 
-        <div id="select">
+            <div id="select">
 
+            </div>
+
+            <div id="audioWrapper" style="display:none;">
+                <!--brAudCast goes here-->
+            </div>
+            <a id="back" onmousedown="reLoad()" style="display: none;">return</a>
         </div>
-
-        <div id="audioWrapper" style="display:none;">
-            <!--brAudCast goes here-->
-        </div>
-        <a id="back" onmousedown="reLoad()" style="display: none;">return</a>
-        </audio>
     </body>
 </html>

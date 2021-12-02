@@ -26,6 +26,9 @@ function loadLinks() {
         trackLink.appendChild(document.createTextNode(track["name"]));
         dest.appendChild(trackLink);
     })
+
+    document.getElementById("jsalert").style.display = "none";
+    document.getElementById("content-wrapper").style.display = "block";
 }
 
 function loadTrack(trackID) {

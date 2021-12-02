@@ -39,6 +39,11 @@
     }
 }
 
+#jsalert {
+    color: white;
+    margin: 10% 25%;
+}
+
 p, body {
     margin: 0;
 }
