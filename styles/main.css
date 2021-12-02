@@ -106,3 +106,9 @@ body {
 #back:hover { 
     cursor: pointer;
 }
+
+#logo {
+    color: white;
+    margin: 10% 25%;
+    text-align: center;
+}
