@@ -146,10 +146,13 @@ body {
 #audioWrapper {
     margin: 10% 25%;
     margin-bottom: 2.5%;
+
+    display: flex;
+    justify-content: center;
 }
 
 #brAudCast {
-    width: 100%;
+    width: 80%;
 }
 
 #back, #more, #linker {
@@ -183,11 +186,19 @@ body {
     margin: 1% 25%;
 }
 
+#info {
+    font-size: 1.2em;
+}
+
 @media (max-aspect-ratio: 1/1), (max-width: 770px) {
     .trackLink:hover, #more:hover, #close:hover, #linker:hover {
         cursor: pointer;
         animation-duration: 0.2s;
         animation-name: lightup2;
         animation-fill-mode: forwards;
+    }
+
+    #brAudCast {
+        width: 100%;
     }
 }

@@ -59,7 +59,10 @@ function loadTrack(trackID) {
     var brAudSrc = document.createElement("source");
     brAudSrc.setAttribute("src", "tracks/" + selectedTrack["src"]);
     brAudCast.appendChild(brAudSrc);
-    wrapper.style.display = "block";
+    wrapper.style.display = "flex";
+
+    let genres = String(selectedTrack["genres"]).replace("[","").replace("]", "");
+    document.getElementById("info").textContent = "playing: " + selectedTrack["name"] + ".   genre(s): " + genres;
 
     history.replaceState({}, "", "#" + String(trackID));
     document.getElementById("more").style.display = "block";
