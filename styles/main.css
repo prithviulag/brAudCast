@@ -119,6 +119,18 @@ body {
     animation-fill-mode: forwards;
 }
 
+.delay1::after, .delay1::before {
+    animation-duration:2.2s;
+} 
+
+.delay2::after, .delay2::before {
+    animation-duration:1.8s;
+}
+
+.delay3::after, .delay3::before {
+    animation-duration:2.4s;
+}
+
 #back:hover {
     cursor: pointer;
     animation-duration: 0.2s;
@@ -169,4 +181,13 @@ body {
     color: white;
     text-align: center;
     margin: 1% 25%;
+}
+
+@media (max-aspect-ratio: 1/1), (max-width: 770px) {
+    .trackLink:hover, #more:hover, #close:hover, #linker:hover {
+        cursor: pointer;
+        animation-duration: 0.2s;
+        animation-name: lightup2;
+        animation-fill-mode: forwards;
+    }
 }

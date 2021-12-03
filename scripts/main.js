@@ -31,6 +31,7 @@ function loadLinks() {
         trackLink.id = track["id"];
         accessibleTracks.push(track["id"]);
         trackLink.classList.add("trackLink");
+        trackLink.classList.add("delay" + String(Math.floor((Math.random()*4)))); //creates random motion at 0,1,2,3 
         trackLink.setAttribute("onmousedown", "loadTrack(" + String(track["id"]) + ")");
         trackLink.appendChild(document.createTextNode(track["name"]));
         dest.appendChild(trackLink);
