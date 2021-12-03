@@ -202,4 +202,8 @@ body {
     #brAudCast {
         width: 100%;
     }
+
+    #info {
+        margin-bottom: 25%;
+    }
 }
