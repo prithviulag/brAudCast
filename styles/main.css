@@ -166,10 +166,6 @@ body {
     margin-bottom: 0;
 }
 
-#more {
-    margin-top: 10%;
-}
-
 #close {
     color: white;
     text-align: center;
@@ -192,6 +188,7 @@ body {
 
 #info {
     font-size: 1.2em;
+    margin-bottom: 8%;
 }
 
 @media (max-aspect-ratio: 1/1), (max-width: 770px) {
