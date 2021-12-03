@@ -11,6 +11,12 @@ tracks = [
         "name": "Follow Through (slower)",
         "genres": ["Experimental"]
     },
+    {
+        "id": 3,
+        "src": "03.mp3",
+        "name": "Staggered Tripping",
+        "genres": ["Experimental"]
+    }
 ]
 
 var accessibleTracks = [];
