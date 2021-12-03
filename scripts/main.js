@@ -34,7 +34,7 @@ function loadLinks() {
         trackLink.setAttribute("onmousedown", "loadTrack(" + String(track["id"]) + ")");
         trackLink.appendChild(document.createTextNode(track["name"]));
         dest.appendChild(trackLink);
-    })
+    });
 
     let ur = document.URL;
     if (ur.indexOf("#") != -1) {
@@ -62,6 +62,7 @@ function loadTrack(trackID) {
 
     history.replaceState({}, "", "#" + String(trackID));
     document.getElementById("more").style.display = "block";
+    document.getElementById("audioSettings").style.display = "block";
     document.getElementById("close").style.display = "none";
 }
 
@@ -72,6 +73,7 @@ function reLoad(stillOnTrack) {
     if (stillOnTrack) {
     } else {
         document.getElementById("close").style.display = "none";
+        document.getElementById("audioSettings").style.display = "none";
         history.replaceState({}, "", " ");
         var wrapper = document.getElementById("audioWrapper")
         wrapper.style.display = "none";
@@ -85,4 +87,39 @@ function closeSelect() {
     document.getElementById("close").style.display = "none";
     document.getElementById("select").style.display = "none";
     document.getElementById("more").style.display = "block";
+}
+
+let clickableCopy = true;
+
+function copyLink(linkerObj) {
+    if (clickableCopy) {
+        let copytxt = document.URL;
+        try { //the main way of copying
+            navigator.clipboard.writeText(copytxt);
+        } catch (error) { //only for ie11, which doesn't support the above
+            let tempTxt = document.createElement("input");
+            tempTxt.value = copytxt;
+            document.body.appendChild(tempTxt);
+            tempTxt.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTxt);
+        }
+        callNotif("link copied.", linkerObj, "get link");
+    }
+}
+
+let timeoutArr = [];
+
+function callNotif(message, notifObj, defMessage) {
+    timeoutArr.forEach(function(timeouter) {
+        clearTimeout(timeouter);
+    });
+
+    notifObj.textContent = message;
+    clickableCopy = false;
+    let ntimer = setTimeout(function(){
+        timeoutArr.push(ntimer);
+        notifObj.textContent = defMessage;
+        clickableCopy = true;
+    }, 1.5*1000);
 }

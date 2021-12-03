@@ -112,7 +112,7 @@ body {
     animation-iteration-count: infinite;
 }
 
-.trackLink:hover, #more:hover, #close:hover {
+.trackLink:hover, #more:hover, #close:hover, #linker:hover {
     cursor: pointer;
     animation-duration: 0.2s;
     animation-name: lightup;
@@ -128,7 +128,7 @@ body {
 
 #select {
     text-align: center;
-    margin: 10% 25%;
+    margin: 5% 25%;
 }
 
 #audioWrapper {
@@ -139,13 +139,14 @@ body {
     width: 100%;
 }
 
-#back, #more {
+#back, #more, #linker {
     color: white;
     margin: 10% 25%;
     text-align: center;
 }
 
-#more {
+#more, #linker {
+    margin-top: 2%;
     margin-bottom: 0;
 }
 
@@ -156,4 +157,15 @@ body {
 
 #back:hover { 
     cursor: pointer;
+}
+
+#linker {
+    display: block;
+}
+
+.context {
+    display: block;
+    color: white;
+    text-align: center;
+    margin-top: 1%;
 }
