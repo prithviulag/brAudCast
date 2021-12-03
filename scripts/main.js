@@ -22,6 +22,9 @@ tracks = [
 var accessibleTracks = [];
 
 function loadLinks() {
+    document.getElementById("jsalert").style.display = "none";
+    document.getElementById("content-wrapper").style.display = "block";
+
     var dest = document.getElementById("select");
     tracks.forEach(function(track) {
         var trackLink = document.createElement("a");
@@ -33,8 +36,10 @@ function loadLinks() {
         dest.appendChild(trackLink);
     })
 
-    document.getElementById("jsalert").style.display = "none";
-    document.getElementById("content-wrapper").style.display = "block";
+    let ur = document.URL;
+    if (ur.indexOf("#") != -1) {
+        loadTrack(parseInt(ur.slice(ur.indexOf("#") + 1,)));
+    }
 }
 
 function loadTrack(trackID) {
@@ -46,23 +51,29 @@ function loadTrack(trackID) {
     brAudCast.setAttribute("controls", "");
     brAudCast.setAttribute("autoplay", "");
     var wrapper = document.getElementById("audioWrapper");
+    while (wrapper.firstChild) {
+        wrapper.removeChild(wrapper.firstChild);
+    }
     wrapper.appendChild(brAudCast);
     var brAudSrc = document.createElement("source");
     brAudSrc.setAttribute("src", "tracks/" + selectedTrack["src"]);
     brAudCast.appendChild(brAudSrc);
     wrapper.style.display = "block";
 
-    document.getElementById("back").style.display = "block"
+    history.replaceState({}, "", "#" + String(trackID));
+    document.getElementById("more").style.display = "block";
 }
 
-function reLoad() {
+function reLoad(stillOnTrack) {
     document.getElementById("select").style.display = "block";
-
-    var wrapper = document.getElementById("audioWrapper")
-    wrapper.style.display = "none";
-    while (wrapper.firstChild) {
-        wrapper.removeChild(wrapper.firstChild);
+    document.getElementById("more").style.display = "none";
+    if (stillOnTrack) {
+    } else {
+        history.replaceState({}, "", " ");
+        var wrapper = document.getElementById("audioWrapper")
+        wrapper.style.display = "none";
+        while (wrapper.firstChild) {
+            wrapper.removeChild(wrapper.firstChild);
+        }
     }
-
-    document.getElementById("back").style.display = "none";
 }

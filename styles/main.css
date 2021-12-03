@@ -39,6 +39,16 @@
     }
 }
 
+@keyframes lightup2 {
+    from {
+        color: white;
+    }
+
+    to {
+        color: #4d403b;
+    }
+}
+
 @keyframes colorchange {
     from {
         background-color: #220318;
@@ -102,10 +112,17 @@ body {
     animation-iteration-count: infinite;
 }
 
-.trackLink:hover, #back:hover {
+.trackLink:hover, #more:hover {
     cursor: pointer;
     animation-duration: 0.2s;
     animation-name: lightup;
+    animation-fill-mode: forwards;
+}
+
+#back:hover {
+    cursor: pointer;
+    animation-duration: 0.2s;
+    animation-name: lightup2;
     animation-fill-mode: forwards;
 }
 
@@ -122,18 +139,16 @@ body {
     width: 100%;
 }
 
-#back {
+#back, #more {
     color: white;
     margin: 10% 25%;
     text-align: center;
+}
+
+#more {
+    margin-bottom: 0;
 }
 
 #back:hover { 
     cursor: pointer;
-}
-
-#logo {
-    color: white;
-    margin: 10% 25%;
-    text-align: center;
 }

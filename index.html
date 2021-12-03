@@ -15,15 +15,16 @@
         <div id="content-wrapper" style="display:none;">
             <script src="scripts/main.js"></script>
 
-            <div id="select">
-
-            </div>
-
             <div id="audioWrapper" style="display:none;">
                 <!--brAudCast goes here-->
             </div>
-            <a id="back" onmousedown="reLoad()" style="display: none;">return</a>
+
+            <div id="select">
+
+            </div>
+            
+            <a id="more" onmousedown="reLoad(true)" style="display: none;">select</a>
         </div>
-        <h1 id="logo">|/|/|</h1>
+        <a id="back" onmousedown="reLoad(false)"><h1 id="logo">|/|/|</h1></a>
     </body>
 </html>
