@@ -62,13 +62,16 @@ function loadTrack(trackID) {
 
     history.replaceState({}, "", "#" + String(trackID));
     document.getElementById("more").style.display = "block";
+    document.getElementById("close").style.display = "none";
 }
 
 function reLoad(stillOnTrack) {
     document.getElementById("select").style.display = "block";
+    document.getElementById("close").style.display = "block";
     document.getElementById("more").style.display = "none";
     if (stillOnTrack) {
     } else {
+        document.getElementById("close").style.display = "none";
         history.replaceState({}, "", " ");
         var wrapper = document.getElementById("audioWrapper")
         wrapper.style.display = "none";
@@ -76,4 +79,10 @@ function reLoad(stillOnTrack) {
             wrapper.removeChild(wrapper.firstChild);
         }
     }
+}
+
+function closeSelect() {
+    document.getElementById("close").style.display = "none";
+    document.getElementById("select").style.display = "none";
+    document.getElementById("more").style.display = "block";
 }

@@ -112,7 +112,7 @@ body {
     animation-iteration-count: infinite;
 }
 
-.trackLink:hover, #more:hover {
+.trackLink:hover, #more:hover, #close:hover {
     cursor: pointer;
     animation-duration: 0.2s;
     animation-name: lightup;
@@ -147,6 +147,11 @@ body {
 
 #more {
     margin-bottom: 0;
+}
+
+#close {
+    color: white;
+    text-align: center;
 }
 
 #back:hover { 
