@@ -38,7 +38,7 @@ function loadLinks() {
 
     let ur = document.URL;
     if (ur.indexOf("#") != -1) {
-        loadTrack(parseInt(ur.slice(ur.indexOf("#") + 1,)));
+        loadTrack(parseInt(ur.slice(ur.indexOf("#") + 1)));
     }
 }
 
