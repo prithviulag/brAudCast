@@ -133,6 +133,7 @@ body {
 
 #audioWrapper {
     margin: 10% 25%;
+    margin-bottom: 2.5%;
 }
 
 #brAudCast {
@@ -146,7 +147,7 @@ body {
 }
 
 #more, #linker {
-    margin-top: 2%;
+    margin-top: 5%;
     margin-bottom: 0;
 }
 
@@ -167,5 +168,5 @@ body {
     display: block;
     color: white;
     text-align: center;
-    margin-top: 1%;
+    margin: 1% 25%;
 }
