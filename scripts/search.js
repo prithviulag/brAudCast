@@ -53,7 +53,7 @@ function filterResults() {
 function checkQueriesPress(e) {
     let thekey = e.key;
     if (document.activeElement == document.getElementById("searcher")) {
-        if (thekey == "Backspace" || thekey == "Delete") {
+        if (thekey == "Backspace" || thekey == "Delete" || thekey == "Enter") {
         } else {
             if (thekey == "Spacebar") {
                 thekey = " ";
