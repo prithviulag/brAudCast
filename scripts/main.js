@@ -1,32 +1,38 @@
 tracks = [ //REMEMBER: none of the files have to be named a number, it was just a test. The IDs are entirely dependent on location in the array now too.
     { //MAKE SURE TO UPDATE search.js object too.
-        "src": "01.mp3",
+        "src": "01.mp3", //TRACK ID is the index + 1 of any track (first track is 1, for example)
         "name": "Follow Through",
+        "code": "follow-through",
         "genres": [" Experimental"]
     },
     {
         "src": "02.mp3",
         "name": "Follow Through (slower)",
+        "code": "follow-throughII",
         "genres": [" Experimental"]
     },
     {
         "src": "03.mp3",
         "name": "Staggered Tripping",
+        "code": "staggered-trip",
         "genres": [" Experimental"]
     },
     {
         "src": "interloom1.mp3",
         "name": "interloom (faster)",
+        "code": "interloom",
         "genres": [" Fusion", " Dance", " Experimental"]
     },
     {
         "src": "interloom2.mp3",
         "name": "interloom",
+        "code": "interloomII",
         "genres": [" Fusion", " Dance", " Experimental"]
     },
     {
         "src": "06.mp3",
         "name": "Holdover",
+        "code": "holdover",
         "genres": [" Experimental"]
     }
 ]
@@ -65,7 +71,12 @@ function loadLinks() {
 
     let ur = document.URL;
     if (ur.indexOf("#") != -1) {
-        loadTrack(parseInt(ur.slice(ur.indexOf("#") + 1)));
+        for (var i = 0; i < tracks.length; i++) {
+            let track = tracks[i];
+            if (track["code"] == ur.slice(ur.indexOf("#") + 1)) {
+                loadTrack(i + 1);
+            }
+        }
     }
 }
 
@@ -93,7 +104,7 @@ function loadTrack(trackID) {
     let genres = String(selectedTrack["genres"]).replace("[","").replace("]", "");
     document.getElementById("info").textContent = "playing: " + selectedTrack["name"] + ".   genre(s): " + genres + ".";
 
-    history.replaceState({}, "", "#" + String(trackID));
+    history.replaceState({}, "", "#" + selectedTrack["code"]);
     document.getElementById("more").style.display = "block";
     document.getElementById("audioSettings").style.display = "block";
     document.getElementById("close").style.display = "none";

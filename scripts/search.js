@@ -1,32 +1,38 @@
-tracks = [
-    {
+tracks = [ //REMEMBER: none of the files have to be named a number, it was just a test. The IDs are entirely dependent on location in the array now too.
+    { //MAKE SURE TO UPDATE search.js object too.
         "src": "01.mp3",
         "name": "Follow Through",
+        "code": "follow-through",
         "genres": [" Experimental"]
     },
     {
         "src": "02.mp3",
         "name": "Follow Through (slower)",
+        "code": "follow-throughII",
         "genres": [" Experimental"]
     },
     {
         "src": "03.mp3",
         "name": "Staggered Tripping",
+        "code": "staggered-trip",
         "genres": [" Experimental"]
     },
     {
         "src": "interloom1.mp3",
         "name": "interloom (faster)",
+        "code": "interloom",
         "genres": [" Fusion", " Dance", " Experimental"]
     },
     {
         "src": "interloom2.mp3",
         "name": "interloom",
+        "code": "interloomII",
         "genres": [" Fusion", " Dance", " Experimental"]
     },
     {
         "src": "06.mp3",
         "name": "Holdover",
+        "code": "holdover",
         "genres": [" Experimental"]
     }
 ]
