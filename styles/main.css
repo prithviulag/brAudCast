@@ -82,7 +82,6 @@ p, body {
 }
 
 body {
-    height: 100%;
     font-family: "Work Sans", sans-serif;
     background-color: #040322;
     animation-duration: 60s;
@@ -91,12 +90,15 @@ body {
 }
 
 #all-wrapper {
-    z-index: -2;
+    z-index: -1;
     height: 100vh;
     width: 100vw;
     position: fixed;
     top: 0;
     background: linear-gradient(90deg, rgba(255,255,255,0.1), transparent, rgba(255,255,255,0.1));
+    animation-duration: 60s;
+    animation-name: colorchange;
+    animation-iteration-count: infinite;
 }
 
 .trackLink {
