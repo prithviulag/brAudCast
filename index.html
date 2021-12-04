@@ -8,31 +8,32 @@
         <link rel="icon" type="image/png" href="images/brAudCastfavicon.png"/>
     </head>
     <body onload="loadLinks()">
-        <h1 id="jsalert">JavaScript is required for brAudCast to function.
-            <br>
-            <span style="font-size:0.5em;">Please turn JavaScript on in your browser settings.</span>
-        </h1>
-        <div id="content-wrapper" style="display:none;">
-            <script src="scripts/main.js"></script>
-            <script src="scripts/search.js"></script>
-            <div id="audioWrapper" style="display:none;">
-                <!--brAudCast goes here-->
-            </div>
-            <div id="audioSettings" style="display:none;">
-                <a id="linker" onmousedown="copyLink(this)">get link</a>
-                <p id="info" class="context">playing: Staggered Tripping. genre(s): experimental.</p>
-            </div>
+        <div id="all-wrapper"></div>
+            <h1 id="jsalert">JavaScript is required for brAudCast to function.
+                <br>
+                <span style="font-size:0.5em;">Please turn JavaScript on in your browser settings.</span>
+            </h1>
+            <div id="content-wrapper" style="display:none;">
+                <script src="scripts/main.js"></script>
+                <script src="scripts/search.js"></script>
+                <div id="audioWrapper" style="display:none;">
+                    <!--brAudCast goes here-->
+                </div>
+                <div id="audioSettings" style="display:none;">
+                    <a id="linker" onmousedown="copyLink(this)">get link</a>
+                    <p id="info" class="context">playing: Staggered Tripping. genre(s): experimental.</p>
+                </div>
 
-            <div id="select" class="selectHome">
-                <p class="context" style="font-size:0.9em;">(scroll and select)</p>
-            </div>
+                <div id="select" class="selectHome">
+                    <p class="context" style="font-size:0.9em;">(scroll and select)</p>
+                </div>
 
-            <a id="more" onmousedown="reLoad(true)" style="display: none;">select</a>
-            <a id="close" onmousedown="closeSelect()" style="display: none;">close</a>
-        </div>
-        <div id="searchWrap">
-            <input id="searcher" type="text" placeholder="s e a r c h">
-        </div>
-        <a id="back" onmousedown="reLoad(false)"><h1 id="logo">|/|/|</h1></a>
+                <a id="more" onmousedown="reLoad(true)" style="display: none;">select</a>
+                <a id="close" onmousedown="closeSelect()" style="display: none;">close</a>
+            </div>
+            <div id="searchWrap">
+                <input id="searcher" type="text" placeholder="s e a r c h">
+            </div>
+            <a id="back" onmousedown="reLoad(false)"><h1 id="logo">|/|/|</h1></a>
     </body>
 </html>

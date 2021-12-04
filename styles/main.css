@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento&display=swap');
 
 @keyframes flow {
     from {
@@ -81,11 +82,21 @@ p, body {
 }
 
 body {
+    height: 100%;
     font-family: "Work Sans", sans-serif;
     background-color: #040322;
     animation-duration: 60s;
     animation-name: colorchange;
     animation-iteration-count: infinite;
+}
+
+#all-wrapper {
+    z-index: -2;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0.1), transparent, rgba(255,255,255,0.1));
 }
 
 .trackLink {
