@@ -3,19 +3,37 @@ tracks = [
         "id": 1,
         "src": "01.mp3",
         "name": "Follow Through",
-        "genres": ["Experimental"]
+        "genres": [" Experimental"]
     },
     {
         "id": 2,
         "src": "02.mp3",
         "name": "Follow Through (slower)",
-        "genres": ["Experimental"]
+        "genres": [" Experimental"]
     },
     {
         "id": 3,
         "src": "03.mp3",
         "name": "Staggered Tripping",
-        "genres": ["Experimental"]
+        "genres": [" Experimental"]
+    },
+    {
+        "id": 4,
+        "src": "04.mp3",
+        "name": "Sarasongi",
+        "genres": [" Fusion", " Classical"]
+    },
+    {
+        "id": 5,
+        "src": "05.mp3",
+        "name": "Sarasongi Pt. II",
+        "genres": [" Fusion", " Classical", " Experimental"]
+    },
+    {
+        "id": 6,
+        "src": "06.mp3",
+        "name": "Holdover",
+        "genres": [" Experimental"]
     }
 ]
 
@@ -46,6 +64,9 @@ function loadLinks() {
 function loadTrack(trackID) {
     var dest = document.getElementById("select");
     dest.style.display = "none";
+    dest.classList.remove("selectHome");
+    dest.classList.add("selectSub");
+    document.getElementById("searcher").style.display = "none";
     var selectedTrack = tracks[trackID - 1]
     var brAudCast = document.createElement("audio");
     brAudCast.id = "brAudCast";
@@ -62,7 +83,7 @@ function loadTrack(trackID) {
     wrapper.style.display = "flex";
 
     let genres = String(selectedTrack["genres"]).replace("[","").replace("]", "");
-    document.getElementById("info").textContent = "playing: " + selectedTrack["name"] + ".   genre(s): " + genres;
+    document.getElementById("info").textContent = "playing: " + selectedTrack["name"] + ".   genre(s): " + genres + ".";
 
     history.replaceState({}, "", "#" + String(trackID));
     document.getElementById("more").style.display = "block";
@@ -72,10 +93,13 @@ function loadTrack(trackID) {
 
 function reLoad(stillOnTrack) {
     document.getElementById("select").style.display = "block";
+    document.getElementById("searcher").style.display = "block";
     document.getElementById("close").style.display = "block";
     document.getElementById("more").style.display = "none";
     if (stillOnTrack) {
     } else {
+        document.getElementById("select").classList.remove("selectSub");
+        document.getElementById("select").classList.add("selectHome");
         document.getElementById("close").style.display = "none";
         document.getElementById("audioSettings").style.display = "none";
         history.replaceState({}, "", " ");
@@ -90,6 +114,7 @@ function reLoad(stillOnTrack) {
 function closeSelect() {
     document.getElementById("close").style.display = "none";
     document.getElementById("select").style.display = "none";
+    document.getElementById("searcher").style.display = "none";
     document.getElementById("more").style.display = "block";
 }
 

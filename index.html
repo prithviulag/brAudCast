@@ -14,7 +14,7 @@
         </h1>
         <div id="content-wrapper" style="display:none;">
             <script src="scripts/main.js"></script>
-
+            <script src="scripts/search.js"></script>
             <div id="audioWrapper" style="display:none;">
                 <!--brAudCast goes here-->
             </div>
@@ -23,12 +23,15 @@
                 <p id="info" class="context">playing: Staggered Tripping. genre(s): experimental.</p>
             </div>
 
-            <div id="select">
+            <div id="select" class="selectHome">
 
             </div>
 
             <a id="more" onmousedown="reLoad(true)" style="display: none;">select</a>
             <a id="close" onmousedown="closeSelect()" style="display: none;">close</a>
+        </div>
+        <div id="searchWrap">
+            <input id="searcher" type="text" placeholder="s e a r c h">
         </div>
         <a id="back" onmousedown="reLoad(false)"><h1 id="logo">|/|/|</h1></a>
     </body>

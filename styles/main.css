@@ -140,7 +140,18 @@ body {
 
 #select {
     text-align: center;
-    margin: 5% 25%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.selectHome {
+    margin-top: 8%;
+    max-height: 55vh;
+}
+
+.selectSub {
+    margin-top: 5%;
+    max-height: 20vh;
 }
 
 #audioWrapper {
@@ -169,6 +180,7 @@ body {
 #close {
     color: white;
     text-align: center;
+    margin-top: 2%;
 }
 
 #back:hover { 
@@ -189,6 +201,23 @@ body {
 #info {
     font-size: 1.2em;
     margin-bottom: 8%;
+}
+
+#searchWrap {
+    display: flex;
+    margin-top: 2%;
+}
+
+#searcher {
+    margin: auto;
+    color: white;
+    background: transparent;
+    border: 1px solid white;
+    text-align: center;
+}
+
+#searcher:focus {
+    outline: none;
 }
 
 @media (max-aspect-ratio: 1/1), (max-width: 770px) {
