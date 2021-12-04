@@ -105,6 +105,7 @@ function loadTrack(trackID) {
     document.getElementById("info").textContent = "playing: " + selectedTrack["name"] + ".   genre(s): " + genres + ".";
 
     history.replaceState({}, "", "#" + selectedTrack["code"]);
+    document.title = selectedTrack["name"] + " |/|/|";
     document.getElementById("more").style.display = "block";
     document.getElementById("audioSettings").style.display = "block";
     document.getElementById("close").style.display = "none";
@@ -122,6 +123,7 @@ function reLoad(stillOnTrack) {
         document.getElementById("close").style.display = "none";
         document.getElementById("audioSettings").style.display = "none";
         history.replaceState({}, "", " ");
+        document.title = "brAudCast";
         var wrapper = document.getElementById("audioWrapper")
         wrapper.style.display = "none";
         while (wrapper.firstChild) {
