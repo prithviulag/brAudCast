@@ -1,36 +1,30 @@
-tracks = [
-    {
-        "id": 1,
+tracks = [ //REMEMBER: none of the files have to be named a number, it was just a test. The IDs are entirely dependent on location in the array now too.
+    { //MAKE SURE TO UPDATE search.js object too.
         "src": "01.mp3",
         "name": "Follow Through",
         "genres": [" Experimental"]
     },
     {
-        "id": 2,
         "src": "02.mp3",
         "name": "Follow Through (slower)",
         "genres": [" Experimental"]
     },
     {
-        "id": 3,
         "src": "03.mp3",
         "name": "Staggered Tripping",
         "genres": [" Experimental"]
     },
     {
-        "id": 4,
-        "src": "04.mp3",
-        "name": "Sarasongi",
-        "genres": [" Fusion", " Classical"]
+        "src": "interloom1.mp3",
+        "name": "interloom (faster)",
+        "genres": [" Fusion", " Dance", " Experimental"]
     },
     {
-        "id": 5,
-        "src": "05.mp3",
-        "name": "Sarasongi Pt. II",
-        "genres": [" Fusion", " Classical", " Experimental"]
+        "src": "interloom2.mp3",
+        "name": "interloom",
+        "genres": [" Fusion", " Dance", " Experimental"]
     },
     {
-        "id": 6,
         "src": "06.mp3",
         "name": "Holdover",
         "genres": [" Experimental"]
@@ -44,6 +38,19 @@ function loadLinks() {
     document.getElementById("content-wrapper").style.display = "block";
 
     var dest = document.getElementById("select");
+    for (var i = 0; i < tracks.length; i++) {
+        let track = tracks[i];
+        var trackLink = document.createElement("a");
+        trackLink.id = String(i + 1);
+        accessibleTracks.push(track["name"]);
+        trackLink.classList.add("trackLink");
+        trackLink.classList.add("delay" + String(Math.floor((Math.random()*4)))); //creates random motion at 0,1,2,3 
+        trackLink.setAttribute("onmousedown", "loadTrack(" + String(i + 1) + ")");
+        trackLink.appendChild(document.createTextNode(track["name"]));
+        dest.appendChild(trackLink);
+    }
+
+    /* OLD SYSTEM
     tracks.forEach(function(track) {
         var trackLink = document.createElement("a");
         trackLink.id = track["id"];
@@ -54,6 +61,7 @@ function loadLinks() {
         trackLink.appendChild(document.createTextNode(track["name"]));
         dest.appendChild(trackLink);
     });
+    */
 
     let ur = document.URL;
     if (ur.indexOf("#") != -1) {

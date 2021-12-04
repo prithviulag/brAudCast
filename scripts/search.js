@@ -1,36 +1,30 @@
 tracks = [
     {
-        "id": 1,
         "src": "01.mp3",
         "name": "Follow Through",
         "genres": [" Experimental"]
     },
     {
-        "id": 2,
         "src": "02.mp3",
         "name": "Follow Through (slower)",
         "genres": [" Experimental"]
     },
     {
-        "id": 3,
         "src": "03.mp3",
         "name": "Staggered Tripping",
         "genres": [" Experimental"]
     },
     {
-        "id": 4,
-        "src": "04.mp3",
-        "name": "Sarasongi",
-        "genres": [" Fusion", " Classical"]
+        "src": "interloom1.mp3",
+        "name": "interloom (faster)",
+        "genres": [" Fusion", " Dance", " Experimental"]
     },
     {
-        "id": 5,
-        "src": "05.mp3",
-        "name": "Sarasongi Pt. II",
-        "genres": [" Fusion", " Classical", " Experimental"]
+        "src": "interloom2.mp3",
+        "name": "interloom",
+        "genres": [" Fusion", " Dance", " Experimental"]
     },
     {
-        "id": 6,
         "src": "06.mp3",
         "name": "Holdover",
         "genres": [" Experimental"]
@@ -40,13 +34,14 @@ tracks = [
 let currentQuery = "";
 
 function filterResults() {
-    tracks.forEach(function(track) {
+    for (var i = 0; i < tracks.length; i++) {
+        let track = tracks[i];
         if (track["name"].slice(0,currentQuery.length).toLowerCase() != currentQuery.toLowerCase()) {
-            document.getElementById(track["id"]).style.display = "none";
+            document.getElementById(String(i+1)).style.display = "none";
         } else {
-            document.getElementById(track["id"]).style.display = "block";
+            document.getElementById(String(i+1)).style.display = "block";
         }
-    });
+    }
 }
 
 function checkQueriesPress(e) {
