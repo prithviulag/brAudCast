@@ -142,6 +142,7 @@ body {
     text-align: center;
     overflow-y: scroll;
     overflow-x: hidden;
+    margin-bottom: 5%;
 }
 
 .selectHome {
@@ -214,6 +215,7 @@ body {
     background: transparent;
     border: 1px solid white;
     text-align: center;
+    font-size: 16px;
 }
 
 #searcher:focus {
@@ -233,6 +235,6 @@ body {
     }
 
     #info {
-        margin-bottom: 25%;
+        margin-bottom: 15%;
     }
 }
