@@ -30,6 +30,12 @@ tracks = [ //REMEMBER: none of the files have to be named a number, it was just 
         "genres": [" Fusion", " Dance", " Experimental"]
     },
     {
+        "src": "LockedApartmentv1.mp3",
+        "name": "Locked Apartment",
+        "code": "locked-apt",
+        "genres": [" Trance", " Dance", " Experimental"]
+    },
+    {
         "src": "06.mp3",
         "name": "Holdover",
         "code": "holdover",
