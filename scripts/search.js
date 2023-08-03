@@ -58,7 +58,7 @@ function filterResults() {
 
 function checkQueriesPress(e) {
     let thekey = e.key;
-    let validStr = "abcdefghijklmnopABCDEFGHIJKLMNOP-[]{}+=<>,./?|;:1234567890!@#$%^&*()`~";
+    let validStr = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-[]{}+=<>,./?|;:1234567890!@#$%^&*()`~";
     if (document.activeElement == document.getElementById("searcher")) {
         if (thekey == "Backspace" || thekey == "Delete") {
         } else if (validStr.indexOf(thekey) != -1) {
