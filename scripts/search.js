@@ -1,4 +1,4 @@
-tracks = [ //REMEMBER: none of the files have to be named a number, it was just a test. The IDs are entirely dependent on location in the array now too.
+let tracks = [ //REMEMBER: none of the files have to be named a number, it was just a test. The IDs are entirely dependent on location in the array now too.
     { //MAKE SURE TO UPDATE search.js object too.
         "src": "01.mp3",
         "name": "Follow Through",
@@ -47,6 +47,10 @@ let currentQuery = "";
 
 function filterResults() {
     for (var i = 0; i < tracks.length; i++) {
+        if (currentQuery.length == 0) {  //show all when empty
+            document.getElementById(String(i+1)).style.display = "block";
+            continue;
+        }
         let track = tracks[i];
         if (track["name"].slice(0,currentQuery.length).toLowerCase() != currentQuery.toLowerCase()) {
             document.getElementById(String(i+1)).style.display = "none";
@@ -57,29 +61,12 @@ function filterResults() {
 }
 
 function checkQueriesPress(e) {
-    let thekey = e.key;
-    let validStr = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-[]{}+=<>,./?|;:1234567890!@#$%^&*()`~";
-    if (document.activeElement == document.getElementById("searcher")) {
-        if (thekey == "Backspace" || thekey == "Delete") {
-        } else if (validStr.indexOf(thekey) != -1) {
-            if (thekey == "Spacebar") {
-                thekey = " ";
-            }
-            currentQuery += thekey; //REMEMBER! Spacebar is the value for space
-            filterResults();
-        }
+    let searcher = document.getElementById("searcher");
+    console.log(searcher.value)
+    if (document.activeElement == searcher) {
+        currentQuery = searcher.value;
+        filterResults();
     }
 }
 
-function checkQueriesBack(e) {
-    let thekey = e.key;
-    if (document.activeElement == document.getElementById("searcher")) {
-        if (thekey == "Backspace" || thekey == "Delete") {
-            currentQuery = currentQuery.slice(0,currentQuery.length - 1);
-            filterResults();
-        }
-    }
-}
-
-document.addEventListener("keydown", checkQueriesBack);
-document.addEventListener("keypress", checkQueriesPress);
+document.addEventListener("keyup", checkQueriesPress);
